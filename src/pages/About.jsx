@@ -20,11 +20,8 @@ const CLIENT_LOGOS = [
     // Bank Mandiri
     () => (
         <div className="flex flex-col items-center justify-center p-3 bg-white rounded-xl shadow-sm border border-slate-100/60 hover:shadow-md transition-all duration-300 w-36 h-20 select-none">
-            <svg className="h-7 w-auto" viewBox="0 0 140 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 12 C18 10, 24 16, 32 14 C40 12, 45 6, 50 10" stroke="#F5A623" strokeWidth="4" strokeLinecap="round" fill="none" />
-                <text x="10" y="32" fill="#002D62" fontSize="20" fontWeight="bold" fontFamily="sans-serif">mandırı</text>
-            </svg>
-            <span className="text-[9px] font-medium text-slate-400 mt-1.5">Bank Mandiri</span>
+            <img src="Telkom.webp" className="h-7 w-auto" viewBox="0 0 140 40" fill="none" xmlns="Telkom.webp" />
+            <span className="text-[9px] font-medium text-slate-400 mt-1.5">Telkom</span>
         </div>
     ),
     // Telkom Indonesia

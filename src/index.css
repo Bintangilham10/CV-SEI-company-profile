@@ -2,7 +2,25 @@
 
 .yuyu-regular {
   font-family: "Yuyu", sans-serif;
-  font-size: x-large;
+  font-size: 20px;
   font-weight: 800;
   font-style: normal;
+}
+
+.wavy-corner-bl::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100px;
+  /* Lebar area gelombang ke kanan */
+  height: 80px;
+  /* Tinggi area gelombang ke atas */
+  background: radial-gradient(circle at 0 100%, transparent 10px, #0E2A54 10px);
+  background-size: 20px 20px;
+  /* Ukuran gelombangnya, makin kecil makin rapat */
+  background-repeat: repeat;
+  pointer-events: none;
+  /* Biar nggak ganggu klik konten */
+  z-index: 10;
 }

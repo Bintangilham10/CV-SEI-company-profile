@@ -175,10 +175,7 @@ export default function Home() {
     return (
         <>
             {/* HERO SECTION */}
-            <section className="relative bg-[#0E2A54] overflow-hidden flex-1 flex flex-col justify-between">
-                <div className="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-amber-500/10" />
-                <div className="absolute -left-24 bottom-0 w-72 h-72 rounded-full bg-amber-500/10" />
-
+            <section className="relative overflow-hidden flex-1 flex flex-col justify-between bg-bottom bg-no-repeat" style={{ backgroundImage: "url('/atas.jpg')" }}>
                 <div className="max-w-7xl mx-auto px-6 pt-36 pb-24 grid lg:grid-cols-2 gap-12 items-center relative my-auto">
                     <div>
                         <span className="inline-flex items-center gap-2 bg-white/10 text-amber-400 text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
@@ -220,7 +217,7 @@ export default function Home() {
                 </div>
 
                 {/* STATS BAR */}
-                <div className="bg-[#0A2043] border-t border-white/10 mt-auto">
+                <div className="bg-transparent border-t border-white/10 mt-auto">
                     <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6">
                         {STATS.map(({ icon: Icon, value, label }) => (
                             <div key={label} className="flex items-center gap-3">
@@ -405,13 +402,9 @@ export default function Home() {
 
 
             {/* DOKUMENTASI KEGIATAN & KERJA SAMA */}
-            <section className="py-20 bg-[#F6F7FA] border-t border-slate-200/50">
+            <section className="py-20 bg-transparent border-t border-slate-200/50">
                 <div className="max-w-7xl mx-auto px-6">
-                    <div className="bg-white text-black p-8 md:p-12 shadow-2xl relative overflow-hidden">
-                        {/* Background glowing effects */}
-                        <div className="absolute -right-32 -bottom-32 w-96 h-96 rounded-full bg-amber-500/10 blur-3xl pointer-events-none" />
-                        <div className="absolute -left-32 -top-32 w-96 h-96 rounded-full bg-slate-500/5 blur-3xl pointer-events-none" />
-
+                    <div className="bg-transparent text-black p-8 md:p-12 relative overflow-hidden">
                         {/* Header */}
                         <div className="relative z-10 text-center max-w-3xl mx-auto mb-12">
                             <span className="inline-flex items-center gap-1.5 bg-amber-500/15 text-amber-400 text-xs font-semibold px-3 py-1 rounded-full mb-4 border border-amber-500/35">
@@ -420,7 +413,7 @@ export default function Home() {
                             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
                                 Dokumentasi Kegiatan &amp; <span className="text-amber-400">Kerja Sama</span>
                             </h2>
-                            <p className="text-slate-300 text-sm mt-4 leading-relaxed">
+                            <p className="text-black-300 text-sm mt-4 leading-relaxed">
                                 Jejak langkah kolaborasi CV Solusi Edukasi Indonesia dalam menyelenggarakan pelatihan kompetensi, penyerahan sertifikat resmi, serta penandatanganan kerja sama strategis (MoU) bersama berbagai mitra perusahaan dan institusi.
                             </p>
                         </div>
@@ -447,44 +440,61 @@ export default function Home() {
                         </div>
 
                         {/* Gallery Grid */}
-                        <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-6">
                             {filteredDocs.map((doc) => {
                                 const IconComponent = doc.icon;
                                 return (
                                     <div
                                         key={doc.id}
                                         onClick={() => setSelectedDoc(doc)}
-                                        className="relative rounded-2xl p-6 shadow-md flex flex-col justify-end overflow-hidden min-h-[280px] bg-cover bg-center transition-all duration-300 hover:scale-[1.03] hover:shadow-xl group cursor-pointer"
-                                        style={{
-                                            backgroundImage: `linear-gradient(to bottom, rgba(14, 42, 84, 0.4), rgba(14, 42, 84, 0.95)), url('${doc.image}')`
-                                        }}
+                                        className="bg-white text-[#0E2A54] rounded-2xl p-4 shadow-lg flex flex-col sm:flex-row gap-5 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl group cursor-pointer border border-slate-100/50"
                                     >
-                                        {/* Category Tag */}
-                                        <span className="absolute top-4 left-4 text-[10px] font-extrabold tracking-wider uppercase text-[#0E2A54] bg-amber-400 px-3 py-1 rounded-full shadow-sm">
-                                            {doc.categoryLabel}
-                                        </span>
+                                        {/* Left: Image Container */}
+                                        <div className="w-full sm:w-2/5 aspect-[4/3] rounded-xl overflow-hidden flex-shrink-0 relative bg-slate-50">
+                                            <img
+                                                src={doc.image}
+                                                alt={doc.title}
+                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                            />
+                                        </div>
 
-                                        {/* Content Area */}
-                                        <div className="mt-12 text-left">
-                                            {/* Partner & Date */}
-                                            <div className="flex items-center gap-1.5 text-[11px] text-slate-200 mb-2 font-medium">
-                                                <IconComponent size={12} className="text-amber-400" />
-                                                <span>{doc.partner}</span>
-                                                <span className="text-white/20">•</span>
-                                                <span>{doc.date}</span>
+                                        {/* Right: Content details */}
+                                        <div className="w-full sm:w-3/5 flex flex-col justify-between py-1 text-left">
+                                            <div>
+                                                {/* Category Tag */}
+                                                <div className="mb-2.5">
+                                                    <span className={`inline-block text-[10px] font-extrabold tracking-wider uppercase px-2.5 py-1 rounded text-white shadow-sm ${doc.category === "sertifikat" ? "bg-emerald-600" :
+                                                        doc.category === "kontrak" ? "bg-blue-600" : "bg-amber-600"
+                                                        }`}>
+                                                        {doc.categoryLabel}
+                                                    </span>
+                                                </div>
+
+                                                {/* Partner & Date */}
+                                                <div className="flex flex-wrap items-center gap-1.5 text-[11px] text-slate-500 mb-2 font-semibold">
+                                                    <IconComponent size={12} className="text-amber-500" />
+                                                    <span>{doc.partner}</span>
+                                                    <span className="text-slate-300">•</span>
+                                                    <span>{doc.date}</span>
+                                                </div>
+
+                                                {/* Title */}
+                                                <h3 className="font-extrabold text-[#0E2A54] text-base mb-1.5 leading-snug group-hover:text-amber-500 transition-colors line-clamp-2">
+                                                    {doc.title}
+                                                </h3>
+
+                                                {/* Description */}
+                                                <p className="text-xs text-slate-500 leading-relaxed line-clamp-2">
+                                                    {doc.desc}
+                                                </p>
                                             </div>
-                                            {/* Title */}
-                                            <h3 className="font-extrabold text-white text-base mb-2 leading-snug group-hover:text-amber-300 transition-colors">
-                                                {doc.title}
-                                            </h3>
-                                            {/* Description */}
-                                            <p className="text-xs text-slate-200 leading-relaxed mb-4 line-clamp-2">
-                                                {doc.desc}
-                                            </p>
+
                                             {/* Link */}
-                                            <span className="text-xs font-bold text-amber-400 inline-flex items-center gap-1 hover:text-amber-300 transition-colors">
-                                                Lihat Detail <ArrowRight size={12} />
-                                            </span>
+                                            <div className="mt-4 sm:mt-auto">
+                                                <span className="text-xs font-extrabold text-amber-500 inline-flex items-center gap-1.5 hover:text-amber-600 transition-colors">
+                                                    Lihat Detail <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+                                                </span>
+                                            </div>
                                         </div>
                                     </div>
                                 );

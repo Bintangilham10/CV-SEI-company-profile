@@ -33,13 +33,12 @@ export default function Navbar() {
     const isDarkPage = location.pathname === "/" || location.pathname === "/fasilitas";
 
     // Dynamic classes based on scroll state and current page theme
-    const headerClass = `z-50 transition-all duration-300 ${
-        isDarkPage
-            ? scrolled || menuOpen
-                ? "fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm py-3"
-                : "absolute top-0 left-0 w-full bg-transparent border-b border-transparent py-5"
-            : "sticky top-0 bg-white/90 backdrop-blur-md border-b border-slate-100 py-4 shadow-sm"
-    }`;
+    const headerClass = `z-50 transition-all duration-300 ${isDarkPage
+        ? scrolled || menuOpen
+            ? "fixed top-0 left-0 w-full bg-white/95 backdrop-blur-md border-b border-slate-100 shadow-sm py-3"
+            : "absolute top-0 left-0 w-full bg-transparent border-b border-transparent py-5"
+        : "sticky top-0 bg-white/90 backdrop-blur-md border-b border-slate-100 py-4 shadow-sm"
+        }`;
 
     const textClass = scrolled || menuOpen
         ? "text-slate-600"
@@ -82,21 +81,20 @@ export default function Navbar() {
                         <p className={`font-extrabold text-sm transition-colors duration-300 yuyu-regular ${logoTitleClass}`}>
                             CV SOLUSI EDUKASI
                         </p>
-                        <p className={`text-[10px] tracking-widest font-semibold transition-colors duration-300 yuyu-regular ${logoSubClass}`}>
+                        <p className={`tracking-widest font-semibold transition-colors duration-300 yuyu-regular ${logoSubClass}`}>
                             INDONESIA
                         </p>
                     </div>
                 </Link>
 
-                <nav className={`hidden lg:flex items-center gap-15 text-sm font-medium transition-colors duration-300 yuyu-regular ${textClass}`}>
+                <nav className={`hidden lg:flex items-center gap-15 font-medium transition-colors duration-300 yuyu-regular ${textClass}`}>
                     {NAV_LINKS.map((l) =>
                         l.label === "Layanan" ? (
                             <div key={l.label} className="relative group">
                                 <NavLink
                                     to={l.href}
                                     className={({ isActive }) =>
-                                        `transition-colors inline-flex items-center gap-1 py-2 ${hoverClass} ${
-                                            isActive ? activeTextClass : ""
+                                        `transition-colors inline-flex items-center gap-1 py-2 ${hoverClass} ${isActive ? activeTextClass : ""
                                         }`
                                     }
                                 >
@@ -134,8 +132,7 @@ export default function Navbar() {
                                 key={l.label}
                                 to={l.href}
                                 className={({ isActive }) =>
-                                    `transition-colors py-2 ${hoverClass} ${
-                                        isActive ? activeTextClass : ""
+                                    `transition-colors py-2 ${hoverClass} ${isActive ? activeTextClass : ""
                                     }`
                                 }
                             >
