@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Services from "./pages/Services";
 import Program from "./pages/Program";
-import Contact from "./pages/Contact";
+import AboutUs from "./pages/AboutUs";
 import "./App.css";
 
 export default function App() {
@@ -20,7 +20,7 @@ export default function App() {
                         <Route path="/fasilitas" element={<About />} />
                         <Route path="/layanan" element={<Services />} />
                         <Route path="/program" element={<Program />} />
-                        <Route path="/kontak" element={<Contact />} />
+                        <Route path="/tentang-kami" element={<AboutUs />} />
                     </Routes>
                 </main>
                 <Footer />

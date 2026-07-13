@@ -196,12 +196,14 @@ export default function Home() {
                             event profesional.
                         </p>
                         <div className="flex flex-wrap gap-4">
-                            <Link
-                                to="/kontak"
+                            <a
+                                href="https://wa.me/6281906667944?text=Halo%20CV%20Solusi%20Edukasi%20Indonesia,%20saya%20tertarik%20untuk%20berkonsultasi"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="bg-amber-500 hover:bg-amber-600 text-[#0E2A54] font-bold px-6 py-3 rounded-full inline-flex items-center gap-2 transition-colors"
                             >
                                 Konsultasi Gratis <ArrowRight size={16} />
-                            </Link>
+                            </a>
                             <Link
                                 to="/layanan"
                                 className="border border-white/30 hover:bg-white/10 text-white font-semibold px-6 py-3 rounded-full transition-colors"
@@ -407,9 +409,6 @@ export default function Home() {
                     <div className="bg-transparent text-black p-8 md:p-12 relative overflow-hidden">
                         {/* Header */}
                         <div className="relative z-10 text-center max-w-3xl mx-auto mb-12">
-                            <span className="inline-flex items-center gap-1.5 bg-amber-500/15 text-amber-400 text-xs font-semibold px-3 py-1 rounded-full mb-4 border border-amber-500/35">
-                                Portofolio Kegiatan
-                            </span>
                             <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight">
                                 Dokumentasi Kegiatan &amp; <span className="text-amber-400">Kerja Sama</span>
                             </h2>
@@ -560,13 +559,15 @@ export default function Home() {
                             </div>
 
                             <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row gap-3">
-                                <Link
-                                    to="/kontak"
+                                <a
+                                    href="https://wa.me/6281906667944?text=Halo%20CV%20Solusi%20Edukasi%20Indonesia,%20saya%20ingin%20mengajukan%20kerja%20sama"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     onClick={() => setSelectedDoc(null)}
                                     className="bg-amber-500 hover:bg-amber-600 text-[#0E2A54] font-bold text-xs px-5 py-3 rounded-xl inline-flex items-center justify-center gap-2 transition-colors w-full text-center"
                                 >
                                     Ajukan Kerja Sama <ArrowRight size={14} />
-                                </Link>
+                                </a>
                                 <button
                                     onClick={() => setSelectedDoc(null)}
                                     className="border border-white/20 hover:bg-white/5 text-white font-semibold text-xs px-5 py-3 rounded-xl transition-colors w-full"

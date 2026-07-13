@@ -7,7 +7,7 @@ export const NAV_LINKS = [
     { label: "Fasilitas & Benefit", href: "/fasilitas" },
     { label: "Layanan", href: "/layanan" },
     { label: "Event", href: "/program" },
-    { label: "Kontak", href: "/kontak" },
+    { label: "Tentang Kami", href: "/tentang-kami" },
 ];
 
 export default function Navbar() {
@@ -78,16 +78,16 @@ export default function Navbar() {
                 <Link to="/" className="flex items-center gap-2">
                     <div className="w-9 h-9 rounded-lg bg-[url('/sei1.jpeg')] bg-cover bg-center bg-[#0E2A54]"></div>
                     <div className="leading-tight">
-                        <p className={`font-extrabold text-sm transition-colors duration-300 yuyu-regular ${logoTitleClass}`}>
+                        <p className={`font-extrabold text-sm transition-colors duration-300 roboto-condensed-regular ${logoTitleClass}`}>
                             CV SOLUSI EDUKASI
                         </p>
-                        <p className={`tracking-widest font-semibold transition-colors duration-300 yuyu-regular ${logoSubClass}`}>
+                        <p className={`tracking-widest font-semibold transition-colors duration-300 roboto-condensed-regular ${logoSubClass}`}>
                             INDONESIA
                         </p>
                     </div>
                 </Link>
 
-                <nav className={`hidden lg:flex items-center gap-15 font-medium transition-colors duration-300 yuyu-regular ${textClass}`}>
+                <nav className={`hidden lg:flex items-center gap-15 font-medium transition-colors duration-300 oswald-navbar ${textClass}`}>
                     {NAV_LINKS.map((l) =>
                         l.label === "Layanan" ? (
                             <div key={l.label} className="relative group">
@@ -142,9 +142,9 @@ export default function Navbar() {
                     )}
                 </nav>
 
-                <Link to="/kontak" className="hidden lg:inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-600 text-[#0E2A54] font-bold text-sm px-5 py-2.5 rounded-full transition-colors yuyu-regular">
+                <a href="https://wa.me/6281906667944?text=Halo%20CV%20Solusi%20Edukasi%20Indonesia,%20saya%20tertarik%20untuk%20berkonsultasi" target="_blank" rel="noopener noreferrer" className="hidden lg:inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-600 text-[#0E2A54] font-bold text-sm px-5 py-2.5 rounded-full transition-colors oswald-navbar">
                     Konsultasi Gratis
-                </Link>
+                </a>
 
                 <button className={`lg:hidden transition-colors duration-300 ${hamburgerClass}`} onClick={() => setMenuOpen(!menuOpen)}>
                     {menuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -152,7 +152,7 @@ export default function Navbar() {
             </div>
 
             {menuOpen && (
-                <div className="lg:hidden border-t border-slate-100 px-6 py-4 flex flex-col gap-4 text-sm font-medium bg-white animate-fadeIn yuyu-regular">
+                <div className="lg:hidden border-t border-slate-100 px-6 py-4 flex flex-col gap-4 text-sm font-medium bg-white animate-fadeIn oswald-navbar">
                     {NAV_LINKS.map((l) => (
                         <NavLink
                             key={l.label}
@@ -165,13 +165,15 @@ export default function Navbar() {
                             {l.label}
                         </NavLink>
                     ))}
-                    <Link
-                        to="/kontak"
+                    <a
+                        href="https://wa.me/6281906667944?text=Halo%20CV%20Solusi%20Edukasi%20Indonesia,%20saya%20tertarik%20untuk%20berkonsultasi"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         onClick={() => setMenuOpen(false)}
-                        className="bg-amber-500 text-[#0E2A54] font-bold text-center py-2.5 rounded-full shadow-sm yuyu-regular"
+                        className="bg-amber-500 text-[#0E2A54] font-bold text-center py-2.5 rounded-full shadow-sm oswald-navbar"
                     >
                         Konsultasi Gratis
-                    </Link>
+                    </a>
                 </div>
             )}
         </header>

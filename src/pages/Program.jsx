@@ -94,12 +94,14 @@ export default function Program() {
                                     <p className="text-xs text-slate-200 leading-relaxed mb-4 line-clamp-3">
                                         {p.desc}
                                     </p>
-                                    <Link
-                                        to="/kontak"
+                                    <a
+                                        href={`https://wa.me/6281906667944?text=Halo%20CV%20Solusi%20Edukasi%20Indonesia,%20saya%20tertarik%20dengan%20program%20${encodeURIComponent(p.title)}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="text-xs font-bold text-amber-400 inline-flex items-center gap-1 hover:text-amber-300 transition-colors"
                                     >
-                                        Lihat Detail <ArrowRight size={12} />
-                                    </Link>
+                                        Tanya Program <ArrowRight size={12} />
+                                    </a>
                                 </div>
                             </div>
                         ))}
