@@ -7,6 +7,11 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Program from "./pages/Program";
 import AboutUs from "./pages/AboutUs";
+import TrainingDevelopment from "./pages/services/TrainingDevelopment";
+import ManagementConsulting from "./pages/services/ManagementConsulting";
+import ITSolution from "./pages/services/ITSolution";
+import DigitalProduct from "./pages/services/DigitalProduct";
+import EventMICE from "./pages/services/EventMICE";
 import "./App.css";
 
 export default function App() {
@@ -19,6 +24,11 @@ export default function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/fasilitas" element={<About />} />
                         <Route path="/layanan" element={<Services />} />
+                        <Route path="/layanan/training-development" element={<TrainingDevelopment />} />
+                        <Route path="/layanan/management-consulting" element={<ManagementConsulting />} />
+                        <Route path="/layanan/it-solution" element={<ITSolution />} />
+                        <Route path="/layanan/digital-product" element={<DigitalProduct />} />
+                        <Route path="/layanan/event-mice" element={<EventMICE />} />
                         <Route path="/program" element={<Program />} />
                         <Route path="/tentang-kami" element={<AboutUs />} />
                     </Routes>

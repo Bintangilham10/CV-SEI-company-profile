@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SectionEyebrow from "../components/SectionEyebrow";
 import {
     Presentation, ClipboardList, Laptop2, Code2, PartyPopper, CheckCircle2, ArrowRight,
@@ -9,6 +10,7 @@ const PILLARS = [
     {
         icon: Presentation,
         title: "Training & Professional Development",
+        href: "/layanan/training-development",
         points: [
             "IT & Digital Transformation",
             "Leadership, Communication & Team Development",
@@ -22,6 +24,7 @@ const PILLARS = [
     {
         icon: ClipboardList,
         title: "Management Consulting",
+        href: "/layanan/management-consulting",
         points: [
             "Training Need Analysis (TNA)",
             "Konsultasi Pengembangan Organisasi",
@@ -34,6 +37,7 @@ const PILLARS = [
     {
         icon: Laptop2,
         title: "IT Solution & Software Development",
+        href: "/layanan/it-solution",
         points: [
             "Pengembangan Website & Landing Page",
             "Sistem Informasi Berbasis Web",
@@ -47,6 +51,7 @@ const PILLARS = [
     {
         icon: Code2,
         title: "Software & Digital Product Provider",
+        href: "/layanan/digital-product",
         points: [
             "Software Edukasi & Produktivitas Kerja",
             "Tools Digital untuk Operasional",
@@ -59,6 +64,7 @@ const PILLARS = [
     {
         icon: PartyPopper,
         title: "Event, Workshop, Conference & MICE",
+        href: "/layanan/event-mice",
         points: [
             "Seminar, Workshop & Konferensi",
             "Webinar & Talkshow Profesional",
@@ -95,7 +101,7 @@ export default function Services() {
                         organisasi secara menyeluruh — dari SDM hingga transformasi digital.
                     </p>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {PILLARS.map(({ icon: Icon, title, points, cta, highlight }) => (
+                        {PILLARS.map(({ icon: Icon, title, href, points, cta, highlight }) => (
                             <div
                                 key={title}
                                 className={`rounded-2xl p-7 border shadow-sm flex flex-col ${highlight
@@ -116,11 +122,14 @@ export default function Services() {
                                         </li>
                                     ))}
                                 </ul>
-                                <button className={`text-sm font-semibold inline-flex items-center gap-1.5 self-start px-4 py-2 rounded-full transition-colors ${highlight
-                                    ? "bg-amber-500 text-[#0E2A54] hover:bg-amber-400"
-                                    : "bg-[#0E2A54] text-white hover:bg-[#163B72]"}`}>
+                                <Link
+                                    to={href}
+                                    className={`text-sm font-semibold inline-flex items-center gap-1.5 self-start px-4 py-2 rounded-full transition-colors ${highlight
+                                        ? "bg-amber-500 text-[#0E2A54] hover:bg-amber-400"
+                                        : "bg-[#0E2A54] text-white hover:bg-[#163B72]"}`}
+                                >
                                     {cta} <ArrowRight size={14} />
-                                </button>
+                                </Link>
                             </div>
                         ))}
                     </div>

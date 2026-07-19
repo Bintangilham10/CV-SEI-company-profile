@@ -21,11 +21,11 @@ const Tiktok = ({ size = 14, ...props }) => (
 );
 
 const SERVICES = [
-    "Training & Professional Development",
-    "Management Consulting",
-    "IT Solution & Software Development",
-    "Software & Digital Product Provider",
-    "Event, Workshop, Conference & MICE",
+    { title: "Training & Professional Development", href: "/layanan/training-development" },
+    { title: "Management Consulting", href: "/layanan/management-consulting" },
+    { title: "IT Solution & Software Development", href: "/layanan/it-solution" },
+    { title: "Software & Digital Product Provider", href: "/layanan/digital-product" },
+    { title: "Event, Workshop, Conference & MICE", href: "/layanan/event-mice" },
 ];
 
 export default function Footer() {
@@ -62,8 +62,12 @@ export default function Footer() {
                 <div>
                     <p className="font-semibold text-white mb-4 text-sm">Layanan</p>
                     <ul className="space-y-2 text-xs">
-                        {SERVICES.map((title) => (
-                            <li key={title}>{title}</li>
+                        {SERVICES.map(({ title, href }) => (
+                            <li key={title}>
+                                <Link to={href} className="hover:text-amber-400 transition-colors">
+                                    {title}
+                                </Link>
+                            </li>
                         ))}
                     </ul>
                 </div>
