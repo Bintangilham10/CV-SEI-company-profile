@@ -34,7 +34,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-6 py-12 grid sm:grid-cols-2 lg:grid-cols-[2fr_1fr_2fr_2.5fr] gap-x-4 gap-y-8">
                 <div>
                     <div className="flex items-center gap-2 mb-4">
-                        <div className="w-9 h-9 rounded-lg bg-[url('/sei1.jpeg')] bg-cover bg-center bg-amber-500"></div>
+                        <img src="/sei1.png" alt="Logo CV Solusi Edukasi Indonesia" className="w-12 h-12 object-contain" />
                         <div>
                             <p className="font-bold text-white text-sm">CV Solusi Edukasi Indonesia</p>
                             <p className="text-[10px] text-amber-400">NIB: 2205260161665</p>
