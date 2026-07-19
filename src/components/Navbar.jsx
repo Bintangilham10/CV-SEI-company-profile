@@ -76,7 +76,7 @@ export default function Navbar() {
         <header className={headerClass}>
             <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
                 <Link to="/" className="flex items-center gap-2">
-                    <img src="/sei1.png" alt="Logo CV Solusi Edukasi Indonesia" className="w-12 h-12 object-contain" />
+                    <img src="/sei1.png" alt="Logo CV Solusi Edukasi Indonesia" className="w-14 h-14 object-contain" />
                     <div className="leading-tight">
                         <p className={`font-extrabold text-sm transition-colors duration-300 ${logoTitleClass}`}>
                             CV SOLUSI EDUKASI
