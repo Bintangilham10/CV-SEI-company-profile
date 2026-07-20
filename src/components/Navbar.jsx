@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { Menu, X, Presentation, ClipboardList, Laptop2, Code2, PartyPopper, ChevronDown } from "lucide-react";
 
@@ -43,8 +43,8 @@ export default function Navbar() {
         setMobileDropdownOpen(false);
     }, [location.pathname]);
 
-    // Check if the current page has a dark hero background at the top
-    const isDarkPage = location.pathname === "/" || location.pathname === "/fasilitas";
+    // Always use solid white background for high contrast logo visibility
+    const isDarkPage = false;
 
     // Check if current path is a service sub-page
     const isServicePage = location.pathname.startsWith("/layanan");
@@ -92,11 +92,23 @@ export default function Navbar() {
     return (
         <header className={headerClass}>
             <div className="max-w-7xl mx-auto px-6 h-16 md:h-18 flex items-center justify-between">
-                <Link to="/" className="flex items-center shrink-0 mr-6 lg:mr-10 group">
+                {/* DUAL LOGO BRANDING (PURE IMAGES) */}
+                <Link to="/" className="flex items-center gap-3.5 shrink-0 mr-6 lg:mr-10 group">
+                    {/* Logo 1: Edutech Solution */}
+                    <img
+                        src="/edutech.png"
+                        alt="Edutech Solution Logo"
+                        className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 ease-out group-hover:scale-[1.03]"
+                    />
+
+                    {/* Divider Line */}
+                    <div className="h-7 w-[1.5px] bg-slate-300/60 dark:bg-white/20"></div>
+
+                    {/* Logo 2: CV SEI */}
                     <img
                         src="/sei1.png"
-                        alt="CV Solusi Edukasi Indonesia"
-                        className="h-11 md:h-13 w-auto object-contain transition-transform duration-300 ease-out group-hover:scale-[1.03] mix-blend-multiply"
+                        alt="CV Solusi Edukasi Indonesia Logo"
+                        className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 ease-out group-hover:scale-[1.03] mix-blend-multiply"
                     />
                 </Link>
 
@@ -155,7 +167,7 @@ export default function Navbar() {
                     )}
                 </nav>
 
-                <a href="https://wa.me/6281906667944?text=Halo%20CV%20Solusi%20Edukasi%20Indonesia,%20saya%20tertarik%20untuk%20berkonsultasi" target="_blank" rel="noopener noreferrer" className="hidden lg:inline-flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-[#0E2A54] font-bold text-sm px-6 py-3 rounded-full transition-all duration-300 shadow-sm hover:shadow">
+                <a href="https://wa.me/6281906667944?text=Halo%20Edutech%20Solution%20(CV%20SEI),%20saya%20tertarik%20untuk%20berkonsultasi" target="_blank" rel="noopener noreferrer" className="hidden lg:inline-flex items-center justify-center bg-amber-500 hover:bg-amber-600 text-[#0E2A54] font-bold text-sm px-6 py-2.5 rounded-full transition-all duration-300 shadow-sm hover:shadow">
                     Konsultasi Gratis
                 </a>
 
@@ -215,7 +227,7 @@ export default function Navbar() {
                         )
                     )}
                     <a
-                        href="https://wa.me/6281906667944?text=Halo%20CV%20Solusi%20Edukasi%20Indonesia,%20saya%20tertarik%20untuk%20berkonsultasi"
+                        href="https://wa.me/6281906667944?text=Halo%20Edutech%20Solution%20(CV%20SEI),%20saya%20tertarik%20untuk%20berkonsultasi"
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => setMenuOpen(false)}

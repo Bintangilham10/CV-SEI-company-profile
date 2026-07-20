@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Instagram, Linkedin, Youtube } from "lucide-react";
+import { MapPin, Phone, Mail, Globe, Instagram, Linkedin, Youtube } from "lucide-react";
 import { NAV_LINKS } from "./Navbar";
 
 // Custom TikTok icon matching Lucide stroke style
@@ -31,19 +31,28 @@ const SERVICES = [
 export default function Footer() {
     return (
         <footer className="bg-[#0A2043] text-slate-400 text-sm mt-auto">
-            <div className="max-w-7xl mx-auto px-6 py-12 grid sm:grid-cols-2 lg:grid-cols-[2fr_1fr_2fr_2.5fr] gap-x-4 gap-y-8">
+            <div className="max-w-7xl mx-auto px-6 py-12 grid sm:grid-cols-2 lg:grid-cols-[2.2fr_1fr_2fr_2.3fr] gap-x-6 gap-y-8">
                 <div>
-                    <div className="flex items-center gap-2 mb-4">
-                        <img src="/sei1.png" alt="Logo CV Solusi Edukasi Indonesia" className="w-14 h-14 object-contain" />
-                        <div>
-                            <p className="font-bold text-white text-sm">CV Solusi Edukasi Indonesia</p>
-                            <p className="text-[10px] text-amber-400">NIB: 2205260161665</p>
-                        </div>
+                    {/* DUAL LOGO IN FOOTER */}
+                    <div className="flex items-center gap-3 mb-4 bg-white/5 p-3 rounded-2xl border border-white/10 w-fit">
+                        <img src="/edutech.png" alt="Edutech Solution" className="h-10 w-auto object-contain" />
+                        <div className="h-6 w-[1px] bg-white/20"></div>
+                        <img src="/sei1.png" alt="CV Solusi Edukasi Indonesia" className="h-10 w-auto object-contain mix-blend-multiply bg-white rounded-lg p-0.5" />
                     </div>
-                    <p className="text-xs leading-relaxed mb-3">
-                        Mitra pengembangan SDM, konsultasi manajemen, IT solution, software, dan event profesional.
+                    
+                    <div className="mb-3">
+                        <p className="font-extrabold text-white text-base leading-tight">Edutech Solution</p>
+                        <p className="text-[10px] text-amber-400 font-medium">CV Solusi Edukasi Indonesia | NIB: 2205260161665</p>
+                    </div>
+
+                    <p className="text-xs font-semibold text-amber-300 mb-2">
+                        "Edutech Solution: Pelatihan Praktis dan Aplikatif"
                     </p>
-                    <p className="text-xs text-amber-400 italic">"Empowering People, Transforming Organizations"</p>
+                    <p className="text-xs leading-relaxed mb-3">
+                        Mitra strategis dalam pengembangan SDM, konsultasi manajemen, IT solution, software, dan event profesional.
+                    </p>
+                    <p className="text-[11px] text-slate-300 italic mb-1">"Empowering People, Transforming Organizations"</p>
+                    <p className="text-[11px] text-amber-400/90 font-medium">Purpose: "Mencetak profesional unggul, untuk Indonesia yang lebih baik"</p>
                 </div>
                 
                 <div>
@@ -73,23 +82,27 @@ export default function Footer() {
                 </div>
                 
                 <div>
-                    <p className="font-semibold text-white mb-4 text-sm">Kontak</p>
-                    <ul className="space-y-3 text-xs mb-4">
+                    <p className="font-semibold text-white mb-4 text-sm">Kontak &amp; Alamat</p>
+                    <ul className="space-y-2.5 text-xs mb-4">
                         <li className="flex gap-2 items-start">
-                            <MapPin size={12} className="text-amber-400 mt-0.5 shrink-0" />
+                            <MapPin size={13} className="text-amber-400 mt-0.5 shrink-0" />
                             <span>Jl. Saluyu XII A No. 42, Cipamokolan, Rancasari, Bandung 40232</span>
                         </li>
-                        <li className="flex gap-2">
-                            <Phone size={12} className="text-amber-400 mt-0.5 shrink-0" />
+                        <li className="flex gap-2 items-center">
+                            <Phone size={13} className="text-amber-400 shrink-0" />
                             <span>081906667944</span>
                         </li>
-                        <li className="flex gap-2">
-                            <Mail size={12} className="text-amber-400 mt-0.5 shrink-0" />
-                            <span>solusiedukasiindonesia@gmail.com</span>
+                        <li className="flex gap-2 items-center">
+                            <Mail size={13} className="text-amber-400 shrink-0" />
+                            <span>info@edutechsolution.co.id / solusiedukasiindonesia@gmail.com</span>
+                        </li>
+                        <li className="flex gap-2 items-center">
+                            <Globe size={13} className="text-amber-400 shrink-0" />
+                            <span>www.edutechsolution.co.id</span>
                         </li>
                     </ul>
                     
-                    <div className="flex items-center gap-2.5 pt-4 border-t border-white/10">
+                    <div className="flex items-center gap-2.5 pt-3 border-t border-white/10">
                         <a href="https://www.instagram.com/sei_solusiedukasi?igsh=MWx2Mmd5MThxM3o4aQ==" className="w-8 h-8 rounded-full bg-white/5 hover:bg-amber-400 hover:text-[#0E2A54] flex items-center justify-center transition-all duration-300 text-slate-300" aria-label="Instagram">
                             <Instagram size={14} />
                         </a>
@@ -106,8 +119,8 @@ export default function Footer() {
                 </div>
             </div>
             
-            <div className="border-t border-white/10 py-5 text-center text-xs bg-white text-black">
-                © {new Date().getFullYear()} CV Solusi Edukasi Indonesia. Seluruh hak cipta dilindungi.
+            <div className="border-t border-white/10 py-5 text-center text-xs bg-white text-slate-800 font-medium">
+                © {new Date().getFullYear()} Edutech Solution (CV Solusi Edukasi Indonesia). Seluruh hak cipta dilindungi.
             </div>
         </footer>
     );
