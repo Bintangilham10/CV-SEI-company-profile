@@ -4,7 +4,6 @@ import { Menu, X, Presentation, ClipboardList, Laptop2, Code2, PartyPopper, Chev
 
 export const NAV_LINKS = [
     { label: "Home", href: "/" },
-    { label: "Fasilitas & Benefit", href: "/fasilitas" },
     { label: "Layanan", href: "/layanan" },
     { label: "Event", href: "/program" },
     { label: "Tentang Kami", href: "/tentang-kami" },
@@ -93,16 +92,8 @@ export default function Navbar() {
     return (
         <header className={headerClass}>
             <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-                <Link to="/" className="flex items-center gap-2">
-                    <img src="/sei1.png" alt="Logo CV Solusi Edukasi Indonesia" className="w-14 h-14 object-contain" />
-                    <div className="leading-tight">
-                        <p className={`font-extrabold text-sm transition-colors duration-300 ${logoTitleClass}`}>
-                            CV SOLUSI EDUKASI
-                        </p>
-                        <p className={`tracking-widest font-semibold transition-colors duration-300 ${logoSubClass}`}>
-                            INDONESIA
-                        </p>
-                    </div>
+                <Link to="/" className="flex items-center">
+                    <img src="/sei1.png" alt="Logo CV Solusi Edukasi Indonesia" className="h-12 md:h-14 w-auto object-contain" />
                 </Link>
 
                 <nav className={`hidden lg:flex items-center gap-15 font-medium transition-colors duration-300 ${textClass}`}>
